@@ -7,6 +7,7 @@ define('SS_ONBOARDING', 124 << 8);
 
 class hooks_fa_onboarding extends hooks {
     var $module_name = 'fa_onboarding';
+    var $version = '1.0.0';
 
     function install_options($app) {
         global $path_to_root;
