@@ -8,9 +8,9 @@
 ```
 ksf_FA_Onboarding/
 ├── sql/
-│   ├── fa_onboarding_plans.sql
-│   ├── fa_onboarding_tasks.sql
-│   └── fa_onboarding_checklist.sql
+│   ├── ksf_onboarding_plans.sql
+│   ├── ksf_onboarding_tasks.sql
+│   └── ksf_onboarding_checklist.sql
 ├── includes/
 │   ├── plans_db.inc
 │   ├── tasks_db.inc
