@@ -105,11 +105,11 @@ CREATE TABLE `@TB_PREF@fa_onboarding_workflow_templates` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
 
-#### fa_onboarding_tasks
+#### ksf_onboarding_tasks
 Tasks assigned during onboarding.
 
 ```sql
-CREATE TABLE `@TB_PREF@fa_onboarding_tasks` (
+CREATE TABLE `@TB_PREF@ksf_onboarding_tasks` (
     `task_id` VARCHAR(20) NOT NULL,
     `onboarding_id` VARCHAR(20) NOT NULL,
     `template_id` VARCHAR(20) DEFAULT NULL,

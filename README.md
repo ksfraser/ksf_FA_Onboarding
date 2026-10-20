@@ -137,7 +137,7 @@ The module expects the following database tables:
 | inactive | TINYINT(1) | Active flag |
 | created_at | TIMESTAMP | Record creation time |
 
-### fa_onboarding_tasks
+### ksf_onboarding_tasks
 | Column | Type | Description |
 |--------|------|-------------|
 | task_id | VARCHAR(20) | Primary key |

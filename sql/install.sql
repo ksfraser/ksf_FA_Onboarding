@@ -1,6 +1,10 @@
 -- Onboarding module database schema for FrontAccounting
 
-CREATE TABLE IF NOT EXISTS `fa_onboarding_tasks` (
+ALTER TABLE IF EXISTS `fa_onboarding_tasks` RENAME TO `0_ksf_onboarding_tasks`;
+ALTER TABLE IF EXISTS `fa_onboarding_plans` RENAME TO `0_ksf_onboarding_plans`;
+ALTER TABLE IF EXISTS `fa_onboarding_checklist` RENAME TO `0_ksf_onboarding_checklist`;
+
+CREATE TABLE IF NOT EXISTS `0_ksf_onboarding_tasks` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(255) NOT NULL,
     `description` TEXT,
@@ -10,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `fa_onboarding_tasks` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS `fa_onboarding_plans` (
+CREATE TABLE IF NOT EXISTS `0_ksf_onboarding_plans` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `employee_id` INT(11) NOT NULL,
     `start_date` DATE NOT NULL,
@@ -21,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `fa_onboarding_plans` (
     KEY `employee_id` (`employee_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS `fa_onboarding_checklist` (
+CREATE TABLE IF NOT EXISTS `0_ksf_onboarding_checklist` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `plan_id` INT(11) NOT NULL,
     `task_id` INT(11) NOT NULL,
@@ -32,4 +36,4 @@ CREATE TABLE IF NOT EXISTS `fa_onboarding_checklist` (
     KEY `plan_id` (`plan_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `fa_modules` (`name`, `version`, `enabled`, `installed`) VALUES ('Onboarding', '1.0.0', 1, NOW()) ON DUPLICATE KEY UPDATE `version` = '1.0.0';
+INSERT INTO `0_ksf_modules` (`name`, `version`, `enabled`, `installed`) VALUES ('Onboarding', '1.0.0', 1, NOW()) ON DUPLICATE KEY UPDATE `version` = '1.0.0';
